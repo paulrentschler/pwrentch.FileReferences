@@ -3,12 +3,26 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       metal:use-macro="context/main_template/macros/master">
 
-    <metal:block fill-slot="content-core">
-        <div>
-            <h1>Hello
-                <span tal:content="view/hello_name">this gets replaced</span>
-            </h1>
-        </div>
-    </metal:block>
+  <metal:slot fill-slot="body">
+    <div id="content">
+      <h1 class="documentFirstHeading">
+        File references report
+      </h1>
 
+      <div class="documentDescription">
+        Report of all file objects in the site and any objects in the
+        site that link to them.
+      </div>
+
+      <div id="content-core">
+
+          <div>
+            <h1>Hello
+              <span tal:content="view/hello_name">this gets replaced</span>
+            </h1>
+          </div>
+
+      </div>
+    </div>
+  </metal:slot>
 </html>
