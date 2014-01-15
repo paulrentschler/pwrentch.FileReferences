@@ -10,7 +10,7 @@
   <!-- view to display files and objects that link to them -->
   <browser:page
       name="reflist"
-      for="IFolderish"
+      for="*"
       class=".file_references.ReferenceListView"
       permission="cmf.ModifyPortalContent"
       />
