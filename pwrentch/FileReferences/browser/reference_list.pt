@@ -16,11 +16,43 @@
 
       <div id="content-core">
 
-          <div>
-            <h1>Hello
-              <span tal:content="view/hello_name">this gets replaced</span>
-            </h1>
-          </div>
+          <tal:types tal:repeat="type view/file_types">
+            <h2 tal:condition="python:type == 'unknown'">
+              documents of unknown type
+            </h2>
+            <h2 tal:condition="python:type != 'unknown'">
+              <span tal:content="type" /> documents
+            </h2>
+
+            <dl>
+              <tal:files tal:repeat="file python:view.files[type]">
+                <dt>
+                  <h3>
+                    <a tal:attributes="href file/absolute_url"
+                       tal:content="python:file.absolute_url().split('/')[-1]" />
+                    <span class="small" tal:condition="file/Title">
+                      (<span tal:replace="file/Title" />)
+                    </span>
+                  </h3>
+                </dt>
+                <dd tal:define="refs python:view.getReferences(file)">
+                  <div tal:condition="not: refs">
+                    <strong>NOTHING links to this object!</strong>
+                  </div>
+
+                  <tal:refs tal:condition="refs">
+                    <ul tal:repeat="ref refs">
+                      <li>
+                        <span tal:content="ref/Title" />
+                        (<a tal:attributes="href ref/absolute_url"
+                            tal:content="python: '/'.join(ref.getPhysicalPath())" />)
+                      </li>
+                    </ul>
+                  </tal:refs>
+                </dd>
+              </tal:files>
+            </dl>
+          </tal:types>
 
       </div>
     </div>
