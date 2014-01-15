@@ -7,4 +7,12 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <!-- view to display files and objects that link to them -->
+  <browser:page
+      name="refs"
+      for="IFolderish"
+      class=".file_references.ReferenceListView"
+      permission="cmf.ModifyPortalContent"
+      />
+
 </configure>
