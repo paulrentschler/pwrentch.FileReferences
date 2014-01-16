@@ -62,6 +62,7 @@ class ReferenceListView(BrowserView):
             # Make educated guesses on mime types
             crossref = {
                 'octet-stream': 'unknown',
+                'jpeg': 'jpg',
                 'vnd.ms-excel': 'xls',
                 'vnd.ms-powerpoint': 'ppt',
                 'vnd.ms-openxmlformats-opendocument.spreadsheetml.sheet': 'xlsx',
