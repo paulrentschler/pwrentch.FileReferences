@@ -28,8 +28,8 @@
         </h1>
 
         <div class="documentDescription">
-          Report of all file objects in the site and any objects in the
-          site that link to them.
+          List of all file items in the site and any site content
+          that link to them.
         </div>
 
         <div id="content-core">
@@ -55,7 +55,7 @@
                   </dt>
                   <dd tal:define="refs python:view.getReferences(file)">
                     <div tal:condition="not: refs">
-                      <span class="discreet">Nothing links to this object.</span>
+                      <span class="discreet">Nothing links to this item.</span>
                     </div>
 
                     <tal:refs tal:condition="refs">
