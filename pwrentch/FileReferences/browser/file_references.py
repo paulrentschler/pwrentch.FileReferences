@@ -9,15 +9,14 @@ class ReferenceListView(BrowserView):
     def __call__(self):
         """"""
         # Determine which portal_types to include
-        defaultPortalTypes = [ 'File', 'Image', ]
-        self.portalTypes = defaultPortalTypes
+        self.portalTypes = [ 'File', 'Image', ]
         if self.request.get("submit", None):
-            for type in self.portalTypes:
-                if not self.request.get(type, None):
+            for type in [ 'File', 'Image', ]:
+                if not self.request.get("portal-type-" + type, None):
                     self.portalTypes.remove(type)
         if self.portalTypes == []:
             # If nothing was selected, then use everything
-            self.portalTypes = defaultPortalTypes
+            self.portalTypes = [ 'File', 'Image', ]
 
         # Get all of the content items of the selected portalTypes
         portal_catalog = getToolByName(self.context, 'portal_catalog')
@@ -38,17 +37,26 @@ class ReferenceListView(BrowserView):
                 files[extension] = [ ]
             files[extension].append(obj)
 
-
+        # Make the dictionary of files available to the template
         self.files = files
-        self.file_types = sorted(files.keys())
-        self.hello_name = getattr(self.context, 'hello_name', 'World')
+
+        # Make the lists of file types available to the template
+        self.allFileTypes = sorted(files.keys())
+        self.fileTypes = sorted(files.keys())
+        if self.request.get("submit", None):
+            for type in self.allFileTypes:
+                if not self.request.get("doc-type-" + type, None):
+                    self.fileTypes.remove(type)
         return self.template()
+
+
 
     def getReferences(self, object):
         """"""
         reference_catalog = getToolByName(self.context, 'reference_catalog')
         references = reference_catalog.getBackReferences(object)
         return [ ref.getSourceObject() for ref in references ]
+
 
 
     def determineContentType(self, obj):
