@@ -80,16 +80,25 @@
           <form method="post"
                 tal:attributes="action string:${context/absolute_url}/@@reflist">
             <h3>Item types to include</h3>
-            <ul>
+            <ul tal:define="ptypes python:['File', 'Image',]"
+                tal:repeat="ptype ptypes">
               <li>
-                <input type="checkbox" name="file" id="file-type-option"
-                       value="File" />
-                <label for="file-type-option">Files</label>
-              </li>
-              <li>
-                <input type="checkbox" name="image" id="image-type-option"
-                       value="Image" />
-                <label for="image-type-option">Images</label>
+                <tal:block tal:condition="python: ptype in view.portalTypes">
+                  <input type="checkbox" checked="checked"
+                         tal:attributes="name  string:portal-type-${ptype};
+                                         id    string:portal-type-${ptype};
+                                         value ptype;"
+                         />
+                </tal:block>
+                <tal:block tal:condition="python: ptype not in view.portalTypes">
+                  <input type="checkbox"
+                         tal:attributes="name  string:portal-type-${ptype};
+                                         id    string:portal-type-${ptype};
+                                         value ptype;"
+                         />
+                </tal:block>
+                <label tal:attributes="for string:portal-type-${ptype}"
+                       tal:content="ptype" />
               </li>
             </ul>
 
