@@ -9,11 +9,11 @@
 
 
 /* style the report */
-h1 {
+#reflist-report h1 {
     font-size: 2em;
 }
 
-h2 {
+#reflist-report h2 {
     border-bottom: 1px solid #444444;
     font-size: 1.5em;
     margin-bottom: 0.5em;
@@ -21,23 +21,23 @@ h2 {
     padding-top: 0.5em;
 }
 
-h2:nth-of-type(1) {
+#reflist-report h2:nth-of-type(1) {
     margin-top: 1em;
     padding-top: 0;
 }
 
-h3 {
+#reflist-report h3 {
     font-size: 1.3em;
 }
 
-.small {
+#reflist-report .small {
     font-size: 0.7em;
 }
 
-dl {
+#reflist-report dl {
     margin-left: 2em;
 }
 
-#content dd > ul {
+#reflist-report dd > ul {
     margin-left: 1em;
 }
