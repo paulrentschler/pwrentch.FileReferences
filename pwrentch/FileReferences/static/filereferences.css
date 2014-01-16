@@ -1,0 +1,8 @@
+/* hide the Products.ContentWellPortlets management links */
+.manageInHeaderPortletsLink,
+.managePortletsAboveLink,
+.managePortletsBelowLink,
+.manageFooterPortletsLink
+{
+    display: none !important;
+}
