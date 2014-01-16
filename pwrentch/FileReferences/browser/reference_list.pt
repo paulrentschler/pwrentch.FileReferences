@@ -73,6 +73,43 @@
             </tal:types>
 
         </div>
+
+
+        <div id="options-dialog">
+          <h2>Report options</h2>
+          <form method="post"
+                tal:attributes="action string:${context/absolute_url}/@@reflist">
+            <h3>Item types to include</h3>
+            <ul>
+              <li>
+                <input type="checkbox" name="file" id="file-type-option"
+                       value="File" />
+                <label for="file-type-option">Files</label>
+              </li>
+              <li>
+                <input type="checkbox" name="image" id="image-type-option"
+                       value="Image" />
+                <label for="image-type-option">Images</label>
+              </li>
+            </ul>
+
+            <h3>Document types to include</h3>
+            <ul tal:repeat="type view/file_types">
+              <li>
+                <input type="checkbox"
+                       tal:attributes="name  string:doc-type-${type};
+                                       id    string:doc-type-${type};
+                                       value type"
+                       />
+                <label tal:attributes="for string:doc-type-${type}"
+                       tal:content="type" />
+              </li>
+            </ul>
+
+            <input type="submit" name="submit" value="Update" />
+          </form>
+        </div>
+
       </div>
     </div>
   </metal:slot>
