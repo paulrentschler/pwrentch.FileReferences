@@ -10,21 +10,21 @@ class ReferenceListView(BrowserView):
         """"""
         # Determine which portal_types to include
         defaultPortalTypes = [ 'File', 'Image', ]
-        portalTypes = defaultPortalTypes
+        self.portalTypes = defaultPortalTypes
         if self.request.get("submit", None):
-            for type in portalTypes:
+            for type in self.portalTypes:
                 if not self.request.get(type, None):
-                    portalTypes.remove(type)
-        if portalTypes == []:
+                    self.portalTypes.remove(type)
+        if self.portalTypes == []:
             # If nothing was selected, then use everything
-            portalTypes = defaultPortalTypes
+            self.portalTypes = defaultPortalTypes
 
         # Get all of the content items of the selected portalTypes
         portal_catalog = getToolByName(self.context, 'portal_catalog')
         current_path = '/'.join(self.context.getPhysicalPath())
         brains = portal_catalog(
             path={'query': current_path},
-            portal_type=portalTypes,
+            portal_type=self.portalTypes,
             show_inactive=True
             )
         files = { }
