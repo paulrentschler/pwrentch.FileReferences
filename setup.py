@@ -12,31 +12,19 @@ def read(*rnames):
 version = '1.0'
 
 long_description = (
-    read('README.txt')
+    read('README.md')
     + '\n' +
     'Change history\n'
     '**************\n'
     + '\n' +
-    read('CHANGES.txt')
-    + '\n' +
-    'Detailed Documentation\n'
-    '**********************\n'
-    + '\n' +
-    read('pwrentch', 'FileReferences', 'README.txt')
-    + '\n' +
-    'Contributors\n'
-    '************\n'
-    + '\n' +
-    read('CONTRIBUTORS.txt')
-    + '\n' +
-    'Download\n'
-    '********\n')
+    read('CHANGES.md')
+    )
 
 tests_require = ['zope.testing']
 
 setup(name='pwrentch.FileReferences',
       version=version,
-      description="Lists file objects and the objects that link to them",
+      description="Lists file and image items and the items that link to them",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
@@ -48,7 +36,7 @@ setup(name='pwrentch.FileReferences',
       keywords='',
       author='',
       author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      url='https://github.com/paulrentschler/pwrentch.FileReferences',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['pwrentch', ],
