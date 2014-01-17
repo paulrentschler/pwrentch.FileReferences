@@ -91,9 +91,8 @@
           <form method="post"
                 tal:attributes="action string:${context/absolute_url}/@@reflist">
             <h3>Item types to include</h3>
-            <ul tal:define="ptypes python:['File', 'Image',]"
-                tal:repeat="ptype ptypes">
-              <li>
+            <ul tal:define="ptypes python:['File', 'Image',]">
+              <li tal:repeat="ptype ptypes">
                 <tal:block tal:condition="python: ptype in view.portalTypes">
                   <input type="checkbox" checked="checked"
                          tal:attributes="name  string:portal-type-${ptype};
@@ -115,8 +114,8 @@
 
             <a name="options-dialog"></a>
             <h3>Document types to include</h3>
-            <ul tal:repeat="type view/allFileTypes">
-              <li>
+            <ul>
+              <li tal:repeat="type view/allFileTypes">
                 <tal:block tal:condition="python: type in view.fileTypes">
                   <input type="checkbox" checked="checked"
                          tal:attributes="name  string:doc-type-${type};
