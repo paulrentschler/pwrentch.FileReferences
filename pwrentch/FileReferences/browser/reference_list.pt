@@ -15,6 +15,13 @@
           />
   </metal:styles>
 
+  <metal:scripts fill-slot="javascript_head_slot">
+    <script type="text/javascript"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="src string:${navroot}/++resource++pwrentch.FileReferences/filereferences.js"
+            ></script>
+  </metal:scripts>
+
 
   <metal:slot fill-slot="content">
     <div id="reflist-report">
@@ -25,6 +32,10 @@
       <div id="content">
         <h1 class="documentFirstHeading">
           File references report
+          <a rel="#options-dialog"
+             tal:define="aurl context/absolute_url"
+             tal:attributes="href string:${aurl}/@@reflist#options-dialog"
+             >customize</a>
         </h1>
 
         <div class="documentDescription">
@@ -102,6 +113,7 @@
               </li>
             </ul>
 
+            <a name="options-dialog"></a>
             <h3>Document types to include</h3>
             <ul tal:repeat="type view/allFileTypes">
               <li>
