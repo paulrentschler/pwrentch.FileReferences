@@ -18,7 +18,7 @@
       name="default"
       title="File References Report"
       directory="profiles/default"
-      description="Lists file objects and the objects that link to them"
+      description="Lists file and image items and the items that link to them"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
