@@ -41,3 +41,17 @@
 #reflist-report dd > ul {
     margin-left: 1em;
 }
+
+
+/* style the report options */
+h1.documentFirstHeading > a {
+    font-size: 0.5em;
+    letter-spacing: normal;
+    margin-left: 2em;
+    vertical-align: top;
+}
+
+#options-dialog ul {
+    list-style-type: none;
+    margin: 0.5em 0 1.5em 2em;
+}
