@@ -11,14 +11,11 @@ def read(*rnames):
 
 version = '1.0.2'
 
-long_description = (
-    read('README.rst')
-    + '\n' +
-    read('CHANGES.txt')
-    + '\n' +
+long_description = \
+    read('README.rst') + '\n\n' + \
+    read('CHANGES.txt') + '\n\n' + \
     'Download\n' +
     '========\n'
-    )
 
 tests_require = ['zope.testing']
 
