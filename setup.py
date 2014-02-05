@@ -14,7 +14,7 @@ version = '1.0.2'
 long_description = (
     read('README.rst')
     + '\n' +
-    read('CHANGES.rst')
+    read('CHANGES.txt')
     + '\n' +
     'Download\n' +
     '========\n'
