@@ -3,7 +3,7 @@
 This module contains the tool of pwrentch.FileReferences
 """
 import os
-from distutils.core import setup, find_packages
+from setuptools import setup, find_packages
 
 
 def read(*rnames):
