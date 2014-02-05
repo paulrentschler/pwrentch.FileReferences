@@ -9,15 +9,15 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.0.1'
+version = '1.0.2'
 
 long_description = (
-    read('README.md')
+    read('README.rst')
     + '\n' +
-    'Change history\n'
-    '**************\n'
+    read('CHANGES.rst')
     + '\n' +
-    read('CHANGES.md')
+    'Download\n' +
+    '========\n'
     )
 
 tests_require = ['zope.testing']
@@ -25,6 +25,7 @@ tests_require = ['zope.testing']
 setup(name='pwrentch.FileReferences',
       version=version,
       description="Lists file and image items and the items that link to them",
+      long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
