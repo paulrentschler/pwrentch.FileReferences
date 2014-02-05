@@ -6,3 +6,8 @@
 - Provides a list of File and Image objects in the current folder
 - Shows what content items link to those File and Image objects
 - Report options dialog allows user to select which portal types and document types to include
+
+## 1.1 (2014-02-05)
+
+- Updated installation instructions
+- Packaged for PyPI and Plone.org

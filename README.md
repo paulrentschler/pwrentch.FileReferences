@@ -13,7 +13,16 @@ Plone 4.1+
 This product has been tested with Plone 4.1.4 and should work with anything newer.
 
 
-### Buildout
+### Installation
+
+#### Install stable version via Buildout
+
+1. Add ``pwrentch.FileReferences11 to the eggs section of your buildout configuration
+1. Run buildout
+1. Restart Zope
+1. Go to the Site Setup page in the Plone interface and click on the Add Ons link. Choose "File References" (check its checkbox) and click the Install button.
+
+#### Using the latest development version
 
 1. Clone the repository from GitHub into the src folder
 1. Add ``pwrentch.FileReferences`` to the eggs section of your buildout configuration

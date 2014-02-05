@@ -9,7 +9,7 @@ from distutils.core import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.0'
+version = '1.1'
 
 long_description = (
     read('README.md')
@@ -37,7 +37,7 @@ setup(name='pwrentch.FileReferences',
       author='Paul Rentschler',
       author_email='paul@rentschler.ws',
       url='https://github.com/paulrentschler/pwrentch.FileReferences',
-      download_url='https://github.com/paulrentschler/pwrentch.FileReferences/tarball/1.0'
+      download_url='https://github.com/paulrentschler/pwrentch.FileReferences/tarball/1.1'
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['pwrentch', ],
