@@ -9,12 +9,12 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '1.0.2'
+version = '1.0.3'
 
 long_description = \
     read('README.rst') + '\n\n' + \
     read('CHANGES.txt') + '\n\n' + \
-    'Download\n' +
+    'Download\n' + \
     '========\n'
 
 tests_require = ['zope.testing']
@@ -35,7 +35,7 @@ setup(name='pwrentch.FileReferences',
       author='Paul Rentschler',
       author_email='paul@rentschler.ws',
       url='https://github.com/paulrentschler/pwrentch.FileReferences',
-      download_url='https://github.com/paulrentschler/pwrentch.FileReferences/tarball/'+version,
+      #download_url='https://github.com/paulrentschler/pwrentch.FileReferences/tarball/'+version,
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['pwrentch', ],

@@ -1,10 +1,17 @@
 Change History
 ==============
 
+1.0.3 (2014-02-06)
+------------------
+
+- Resolving more packaging problems
+
+
 1.0.2 (2014-02-05)
 ------------------
 
 - Converted documentation to reStructured text instead of MarkDown
+- Packaging for PyPI works now
 
 
 1.0.1 (2014-02-05)
